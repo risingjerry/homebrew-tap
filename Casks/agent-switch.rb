@@ -2,12 +2,12 @@ cask "agent-switch" do
   version "0.3.0"
   sha256 "ff401ebbdb8e72a3320a0531f72a87c9d126847de55dbe29925c0f05bfe4d030"
 
-  url "https://github.com/JNHFlow21/agent-switch/releases/download/v#{version}/Agent-Switch-#{version}-macos-universal.zip"
+  url "https://github.com/risingjerry/agent-switch/releases/download/v#{version}/Agent-Switch-#{version}-macos-universal.zip"
   name "Agent Switch"
   desc "Manage MCP servers and credentials across local AI agents"
-  homepage "https://github.com/JNHFlow21/agent-switch"
+  homepage "https://github.com/risingjerry/agent-switch"
 
-  depends_on formula: "jnhflow21/tap/agent-switch-cli"
+  depends_on formula: "risingjerry/tap/agent-switch-cli"
   depends_on macos: :sonoma
 
   app "Agent Switch.app"

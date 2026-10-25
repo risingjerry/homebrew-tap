@@ -2,16 +2,16 @@
   <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a>
 </p>
 
-# JNHFlow21 Homebrew Tap
+# risingjerry Homebrew Tap
 
-Official Homebrew Formulae and Casks for JNHFlow21 projects.
+Official Homebrew Formulae and Casks for risingjerry projects.
 
 ## Install Agent Switch
 
 Paste one command:
 
 ```bash
-brew tap JNHFlow21/tap && brew trust --tap JNHFlow21/tap && brew install --cask JNHFlow21/tap/agent-switch
+brew tap risingjerry/tap && brew trust --tap risingjerry/tap && brew install --cask risingjerry/tap/agent-switch
 ```
 
 This installs:
@@ -41,7 +41,7 @@ The CLI prints `agent-switch 0.3.0`, and the native app opens from
 ## Upgrade
 
 ```bash
-brew upgrade --cask JNHFlow21/tap/agent-switch
+brew upgrade --cask risingjerry/tap/agent-switch
 ```
 
 ## Uninstall
@@ -72,8 +72,8 @@ Report reproducible problems in the [Agent Switch issue tracker][issues].
 
 ## License
 
-[MIT](LICENSE) © 2026 JNHFlow21
+[MIT](LICENSE) © 2026 risingjerry
 
-[source]: https://github.com/JNHFlow21/agent-switch
-[release]: https://github.com/JNHFlow21/agent-switch/releases/tag/v0.3.0
-[issues]: https://github.com/JNHFlow21/agent-switch/issues
+[source]: https://github.com/risingjerry/agent-switch
+[release]: https://github.com/risingjerry/agent-switch/releases/tag/v0.3.0
+[issues]: https://github.com/risingjerry/agent-switch/issues

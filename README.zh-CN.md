@@ -2,16 +2,16 @@
   <a href="README.md">English</a> · <strong>简体中文</strong>
 </p>
 
-# JNHFlow21 Homebrew Tap
+# risingjerry Homebrew Tap
 
-用于发布 JNHFlow21 项目的官方 Homebrew Formula 与 Cask。
+用于发布 risingjerry 项目的官方 Homebrew Formula 与 Cask。
 
 ## 安装 Agent Switch
 
 复制执行一条命令：
 
 ```bash
-brew tap JNHFlow21/tap && brew trust --tap JNHFlow21/tap && brew install --cask JNHFlow21/tap/agent-switch
+brew tap risingjerry/tap && brew trust --tap risingjerry/tap && brew install --cask risingjerry/tap/agent-switch
 ```
 
 它会同时安装：
@@ -40,7 +40,7 @@ CLI 会输出 `agent-switch 0.3.0`，原生 App 会从
 ## 升级
 
 ```bash
-brew upgrade --cask JNHFlow21/tap/agent-switch
+brew upgrade --cask risingjerry/tap/agent-switch
 ```
 
 ## 卸载
@@ -69,8 +69,8 @@ brew uninstall agent-switch-cli
 
 ## 许可证
 
-[MIT](LICENSE) © 2026 JNHFlow21
+[MIT](LICENSE) © 2026 risingjerry
 
-[source]: https://github.com/JNHFlow21/agent-switch
-[release]: https://github.com/JNHFlow21/agent-switch/releases/tag/v0.3.0
-[issues]: https://github.com/JNHFlow21/agent-switch/issues
+[source]: https://github.com/risingjerry/agent-switch
+[release]: https://github.com/risingjerry/agent-switch/releases/tag/v0.3.0
+[issues]: https://github.com/risingjerry/agent-switch/issues

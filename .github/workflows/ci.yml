@@ -16,24 +16,24 @@ jobs:
 
       - name: Register and trust the checked-out tap
         run: |
-          brew tap JNHFlow21/tap "$GITHUB_WORKSPACE"
-          brew trust --tap JNHFlow21/tap
+          brew tap risingjerry/tap "$GITHUB_WORKSPACE"
+          brew trust --tap risingjerry/tap
 
       - name: Audit Formula and Cask
         run: |
-          brew style JNHFlow21/tap
-          brew audit --strict JNHFlow21/tap/agent-switch-cli
-          brew audit --cask --strict JNHFlow21/tap/agent-switch
+          brew style risingjerry/tap
+          brew audit --strict risingjerry/tap/agent-switch-cli
+          brew audit --cask --strict risingjerry/tap/agent-switch
 
       - name: Install and test CLI
         run: |
-          brew install JNHFlow21/tap/agent-switch-cli
-          brew test JNHFlow21/tap/agent-switch-cli
+          brew install risingjerry/tap/agent-switch-cli
+          brew test risingjerry/tap/agent-switch-cli
           agent-switch --version
 
       - name: Install and validate macOS app
         run: |
-          brew install --cask JNHFlow21/tap/agent-switch
+          brew install --cask risingjerry/tap/agent-switch
           test -d "/Applications/Agent Switch.app"
           if xattr -p com.apple.quarantine "/Applications/Agent Switch.app"; then
             echo "Gatekeeper quarantine was not removed" >&2
@@ -50,7 +50,7 @@ jobs:
     runs-on: macos-14
     steps:
       - name: Run the public README install command
-        run: brew tap JNHFlow21/tap && brew trust --tap JNHFlow21/tap && brew install --cask JNHFlow21/tap/agent-switch
+        run: brew tap risingjerry/tap && brew trust --tap risingjerry/tap && brew install --cask risingjerry/tap/agent-switch
 
       - name: Verify the public installation
         run: |

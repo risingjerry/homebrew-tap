@@ -1,7 +1,7 @@
 class AgentSwitchCli < Formula
   desc "Local control plane for AI agents, MCP servers, and secrets"
-  homepage "https://github.com/JNHFlow21/agent-switch"
-  url "https://github.com/JNHFlow21/agent-switch/releases/download/v0.3.0/agent_switch-0.3.0.tar.gz"
+  homepage "https://github.com/risingjerry/agent-switch"
+  url "https://github.com/risingjerry/agent-switch/releases/download/v0.3.0/agent_switch-0.3.0.tar.gz"
   sha256 "5dab37f3291644ffa4d3e685ced4287337b985ef153817115039d1b8605ebcb6"
   license "MIT"
 
