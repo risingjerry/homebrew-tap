@@ -4,76 +4,42 @@
 
 # risingjerry Homebrew Tap
 
-Official Homebrew Formulae and Casks for risingjerry projects.
+Homebrew formulae and casks for risingjerry projects.
 
-## Install Agent Switch
+## Fusebox
 
-Paste one command:
-
-```bash
-brew tap risingjerry/tap && brew trust --tap risingjerry/tap && brew install --cask risingjerry/tap/agent-switch
-```
-
-This installs:
-
-- `Agent Switch.app` in `/Applications`;
-- the `agent-switch` CLI and its bundled MCP server commands;
-- Homebrew-managed updates through the same Tap.
-
-Expected result:
+On-demand MCP servers and Skills for Claude Code, Codex and other AI agents.
 
 ```bash
-agent-switch --version
-open -a "Agent Switch"
+brew tap risingjerry/tap && brew trust --tap risingjerry/tap
+brew install risingjerry/tap/fusebox            # the CLI
+brew install --cask risingjerry/tap/fusebox     # the macOS app (optional)
+fusebox --version
 ```
-
-The CLI prints `agent-switch 0.3.0`, and the native app opens from
-`/Applications/Agent Switch.app`.
-
-## Security
 
 > [!WARNING]
-> Agent Switch is currently ad-hoc signed and not Apple-notarized. The primary
-> Alpha Cask deliberately removes Gatekeeper quarantine after installation.
-> Review the [public source][source] and the checksums on the [GitHub
-> Release][release] before installing.
+> The app is ad-hoc signed and not Apple-notarized; the cask removes the
+> Gatekeeper quarantine flag after installation. Review the [source][fusebox]
+> and the checksums on the [release][release] first.
 
-## Upgrade
-
-```bash
-brew upgrade --cask risingjerry/tap/agent-switch
-```
-
-## Uninstall
-
-```bash
-brew uninstall --cask agent-switch
-brew uninstall agent-switch-cli
-```
-
-Uninstalling does not delete `~/.config/agent-switch`, which can contain local
-MCP definitions and credentials.
+Upgrade: `brew upgrade fusebox && brew upgrade --cask fusebox`.
+Uninstall: `brew uninstall --cask fusebox; brew uninstall fusebox` (keeps
+`~/.config/fusebox`, which holds your MCP definitions and secrets).
 
 ## Packages
 
 | Package | Type | Purpose |
 | --- | --- | --- |
-| `agent-switch` | Cask | Native macOS application |
-| `agent-switch-cli` | Formula | CLI backend required by the application |
+| `fusebox` | Formula | `fusebox` CLI (universal macOS binary) |
+| `fusebox` | Cask | Fusebox.app (includes its own copy of the CLI) |
+| `agent-switch`, `agent-switch-cli` | Cask, Formula | Deprecated: the old name of Fusebox |
 
-## Documentation
-
-See the [Agent Switch README][source] for the first-run MCP and credential
-workflow.
-
-## Support
-
-Report reproducible problems in the [Agent Switch issue tracker][issues].
+Moving from Agent Switch: `brew uninstall --cask agent-switch; brew uninstall agent-switch-cli`,
+then install Fusebox. It reads `~/.config/agent-switch` if `~/.config/fusebox` does not exist.
 
 ## License
 
 [MIT](LICENSE) © 2026 risingjerry
 
-[source]: https://github.com/risingjerry/agent-switch
-[release]: https://github.com/risingjerry/agent-switch/releases/tag/v0.3.0
-[issues]: https://github.com/risingjerry/agent-switch/issues
+[fusebox]: https://github.com/risingjerry/fusebox
+[release]: https://github.com/risingjerry/fusebox/releases/tag/v0.4.0

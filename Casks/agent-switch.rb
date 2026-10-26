@@ -7,6 +7,8 @@ cask "agent-switch" do
   desc "Manage MCP servers and credentials across local AI agents"
   homepage "https://github.com/risingjerry/agent-switch"
 
+  deprecate! date: "2026-10-26", because: "is replaced by Fusebox: brew install --cask risingjerry/tap/fusebox"
+
   depends_on formula: "risingjerry/tap/agent-switch-cli"
   depends_on macos: :sonoma
 

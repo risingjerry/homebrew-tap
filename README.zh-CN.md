@@ -4,73 +4,38 @@
 
 # risingjerry Homebrew Tap
 
-用于发布 risingjerry 项目的官方 Homebrew Formula 与 Cask。
+risingjerry 项目的 Homebrew 安装源。
 
-## 安装 Agent Switch
+## Fusebox
 
-复制执行一条命令：
-
-```bash
-brew tap risingjerry/tap && brew trust --tap risingjerry/tap && brew install --cask risingjerry/tap/agent-switch
-```
-
-它会同时安装：
-
-- 位于 `/Applications` 的 `Agent Switch.app`；
-- App 所需的 `agent-switch` CLI 和配套 MCP Server 命令；
-- 由同一个 Tap 管理的后续升级。
-
-预期结果：
+给 Claude Code、Codex 等 AI Agent 用的按需 MCP 和 Skill 管理工具。
 
 ```bash
-agent-switch --version
-open -a "Agent Switch"
+brew tap risingjerry/tap && brew trust --tap risingjerry/tap
+brew install risingjerry/tap/fusebox            # 命令行
+brew install --cask risingjerry/tap/fusebox     # macOS App（可选）
+fusebox --version
 ```
-
-CLI 会输出 `agent-switch 0.3.0`，原生 App 会从
-`/Applications/Agent Switch.app` 打开。
-
-## 安全说明
 
 > [!WARNING]
-> Agent Switch 当前使用 ad-hoc 签名，尚未经过 Apple 公证。主要的 Alpha
-> Cask 会在安装完成后移除 Gatekeeper quarantine。安装前请先检查
-> [公开源码][source]和 [GitHub Release][release] 中的校验和。
+> App 是临时签名，没有经过苹果公证；安装时会去掉 Gatekeeper 隔离标记。安装前可以先看[源码][fusebox]和[发布页][release]上的校验值。
 
-## 升级
-
-```bash
-brew upgrade --cask risingjerry/tap/agent-switch
-```
-
-## 卸载
-
-```bash
-brew uninstall --cask agent-switch
-brew uninstall agent-switch-cli
-```
-
-卸载不会删除 `~/.config/agent-switch`，因为其中可能保存了本地 MCP 定义和凭据。
+升级：`brew upgrade fusebox && brew upgrade --cask fusebox`。
+卸载：`brew uninstall --cask fusebox; brew uninstall fusebox`（不会删除 `~/.config/fusebox`，里面有你的 MCP 配置和密钥）。
 
 ## 软件包
 
-| 软件包 | 类型 | 用途 |
+| 名称 | 类型 | 用途 |
 | --- | --- | --- |
-| `agent-switch` | Cask | 原生 macOS App |
-| `agent-switch-cli` | Formula | App 运行所需的 CLI 后端 |
+| `fusebox` | Formula | `fusebox` 命令行（macOS 通用二进制） |
+| `fusebox` | Cask | Fusebox.app（自带一份命令行） |
+| `agent-switch`、`agent-switch-cli` | Cask、Formula | 已弃用：Fusebox 的旧名字 |
 
-## 文档
+从 Agent Switch 迁移：先 `brew uninstall --cask agent-switch; brew uninstall agent-switch-cli`，再安装 Fusebox。如果没有 `~/.config/fusebox`，它会读取 `~/.config/agent-switch`。
 
-首次运行、MCP 和凭据工作流见 [Agent Switch README][source]。
-
-## 支持
-
-可复现的问题请提交到 [Agent Switch Issues][issues]。
-
-## 许可证
+## 许可
 
 [MIT](LICENSE) © 2026 risingjerry
 
-[source]: https://github.com/risingjerry/agent-switch
-[release]: https://github.com/risingjerry/agent-switch/releases/tag/v0.3.0
-[issues]: https://github.com/risingjerry/agent-switch/issues
+[fusebox]: https://github.com/risingjerry/fusebox
+[release]: https://github.com/risingjerry/fusebox/releases/tag/v0.4.0
